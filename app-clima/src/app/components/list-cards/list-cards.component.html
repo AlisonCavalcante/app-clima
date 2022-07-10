@@ -1,11 +1,13 @@
 <section >
   <div class="content-cards">
-    <div class="card">
+    <div *ngFor="let city of citys" class="card">
       <div class="card-title">
-        asda
+        <p>{{city.name}}</p>
       </div>
       <div class="card-body">
-        asd
+        <div>
+          {{city.main.temp}}<sup>°C</sup>
+        </div>
       </div>
     </div>
   </div>

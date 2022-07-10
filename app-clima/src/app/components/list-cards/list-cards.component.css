@@ -1,5 +1,6 @@
 .content-cards{
   display: flex;
+  flex-wrap: wrap;
   margin: 100px 100px;
 }
 .card {
@@ -10,4 +11,5 @@
   flex-direction: column;
   width: 150px;
   padding: 10px;
+  margin: 10px;
 }

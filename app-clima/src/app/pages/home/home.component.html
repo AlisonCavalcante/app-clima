@@ -4,7 +4,7 @@
   </div>
   <app-search (emitSearch)="searchCity($event)"></app-search>
   <div class="content-cidades">
-    <app-list-cards></app-list-cards>
+    <app-list-cards [citys]="city"></app-list-cards>
   </div>
 </main>
 

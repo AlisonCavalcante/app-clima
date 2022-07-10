@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { City } from './../../shared/models/City';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list-cards',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCardsComponent implements OnInit {
 
+  @Input() citys!: City[];
   constructor() { }
 
   ngOnInit(): void {

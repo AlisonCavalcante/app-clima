@@ -12,6 +12,6 @@ export class ClimaService {
   constructor(private http: HttpClient) { }
 
   getClimaCity(nameCity: string): Observable<City> {
-    return this.http.get<City>(Constantes.URL_BASE + `${nameCity}&appid=${Constantes.API_KEY}`)
+    return this.http.get<City>(Constantes.URL_BASE + `${nameCity}&appid=${Constantes.API_KEY}`);
   }
 }
