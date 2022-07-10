@@ -1,0 +1,13 @@
+.content-cards{
+  display: flex;
+  margin: 100px 100px;
+}
+.card {
+  background-color: var(--text_light);
+  border-radius: 10px;
+  color: var(--text_med);
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding: 10px;
+}
