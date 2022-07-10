@@ -1,1 +1,11 @@
-<p>search works!</p>
+<div class="content">
+  <form [formGroup]="form" (ngSubmit)="search()">
+    <input
+      class="input-city"
+      placeholder="digite o nome da cidade..."
+      type="text"
+      formControlName="cidade"
+    />
+    <button type="submit" [disabled]="!form.valid" class="button">Submit</button>
+  </form>
+</div>
