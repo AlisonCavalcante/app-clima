@@ -23,6 +23,6 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
-    this.emitSearch.emit(this.form.value);
+    this.emitSearch.emit(this.form.get('cidade')?.value);
   }
 }
