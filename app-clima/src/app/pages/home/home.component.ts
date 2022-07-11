@@ -16,12 +16,38 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   searchCity(cidade: string) {
-    this.climaService.getClimaCity(cidade).pipe(
-      map((value) => {
-        value.main.temp = Math.round(value.main.temp - this.metrycsKelvin);
-        this.city.push(value)
-      })
-      )
-    .subscribe();
+    if (this.cityIsSearch(cidade) == false) {
+      this.climaService
+        .getClimaCity(cidade)
+        .pipe(
+          map((value) => {
+            value.main.temp = Math.round(value.main.temp - this.metrycsKelvin);
+            this.city.push(value);
+          })
+        )
+        .subscribe(
+          next => {
+
+          },
+          (error) =>{
+            alert('Cidade Não Encontrada')
+          }
+        );
+    } else {
+      alert("Cidade já foi pesquisada!")
+    }
+  }
+
+  cityIsSearch(cidade: string): boolean {
+    let isSearch = false;
+    if (this.city.length > 0) {
+      this.city.map((value) => {
+        if (value.name === cidade) {
+          return (isSearch = true);
+        }
+        return isSearch;
+      });
+    }
+    return isSearch;
   }
 }

@@ -24,5 +24,6 @@ export class SearchComponent implements OnInit {
 
   search() {
     this.emitSearch.emit(this.form.get('cidade')?.value);
+    this.form.reset();
   }
 }

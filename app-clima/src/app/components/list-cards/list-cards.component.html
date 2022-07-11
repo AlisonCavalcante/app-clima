@@ -2,12 +2,19 @@
   <div class="content-cards">
     <div *ngFor="let city of citys" class="card">
       <div class="card-title">
-        <p>{{city.name}}</p>
+        <p class="card-title__city-name">{{city.name}}</p>
+        <sup>{{city.sys.country}}</sup>
       </div>
       <div class="card-body">
         <div>
-          {{city.main.temp}}<sup>°C</sup>
+         <p> {{city.main.temp}}<sup>°C</sup></p>
         </div>
+        <div>
+          <img class="card-body__img" src="http://openweathermap.org/img/wn/{{city.weather[0].icon}}@2x.png" alt="">
+        </div>
+      </div>
+      <div class="card-footer">
+        <p class="description">{{city.weather[0].description}}</p>
       </div>
     </div>
   </div>
